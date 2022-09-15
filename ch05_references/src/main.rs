@@ -12,7 +12,13 @@ fn show(table: Table) {
 }
 fn main() {
     let mut table = Table::new();
-    table.insert("Gesualdo".to_string(), vec![]);
+    table.insert(
+        "Gesualdo".to_string(),
+        vec![
+            "many mardrigals".to_string(),
+            "Tenebrae Resposoria".to_string(),
+        ],
+    );
     table.insert(
         "Caravaggio".to_string(),
         vec![
@@ -28,4 +34,5 @@ fn main() {
         ],
     );
     show(table);
+    assert_eq!(table["Gesualdo"][0], "many mardrigals")
 }
