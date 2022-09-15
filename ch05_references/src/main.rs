@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 type Table = HashMap<String, Vec<String>>;
 
-fn show(table: Table) {
+fn show(table: &Table) {
     for (artist, works) in table {
         println!("Works by {}:", artist);
         for work in works {
@@ -33,6 +33,6 @@ fn main() {
             "a salt cellar".to_string(),
         ],
     );
-    show(table);
+    show(&table);
     assert_eq!(table["Gesualdo"][0], "many mardrigals")
 }
